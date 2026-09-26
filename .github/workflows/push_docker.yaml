@@ -8,12 +8,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      # ========== 删掉原来Docker Hub登录，替换成GHCR登录 ==========
       - name: Login to GHCR
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
-          username: ${{ shturl.cc/4H }}
+          username: ${{ shturl.cc/8X }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up QEMU
@@ -31,11 +30,10 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6
           push: true
-          # 👉 全部tag改为ghcr.io/你的github用户名/仓库名:xxx，全部小写！
           tags: |
-            ghcr.io/liuyie/iptv:latest
-            ghcr.io/liuyie/iptv:4.19.0
-            ghcr.io/liuyie/iptv:4.19
-            ghcr.io/liuyie/iptv:4
-          cache-from: type=registry,ref=ghcr.io/liuyie/iptv:buildcache
-          cache-to: type=registry,ref=ghcr.io/liuyie/iptv:buildcache,mode=max
+            ghcr.io/akiralereal/iptv:latest
+            ghcr.io/akiralereal/iptv:4.19.0
+            ghcr.io/akiralereal/iptv:4.19
+            ghcr.io/akiralereal/iptv:4
+          cache-from: type=registry,ref=ghcr.io/akiralereal/iptv:buildcache
+          cache-to: type=registry,ref=ghcr.io/akiralereal/iptv:buildcache,mode=max
