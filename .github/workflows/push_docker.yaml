@@ -35,5 +35,5 @@ jobs:
             ghcr.io/liuyie/iptv:4.19.0
             ghcr.io/liuyie/iptv:4.19
             ghcr.io/akiralereal/iptv:4
-          cache-from: type=registry,ref=ghcr.io/akiralereal/iptv:buildcache
-          cache-to: type=registry,ref=ghcr.io/akiralereal/iptv:buildcache,mode=max
+          cache-from: type=registry,ref=ghcr.io/liuyie/iptv:buildcache
+          cache-to: type=registry,ref=ghcr.io/liuyie/iptv:buildcache,mode=max
